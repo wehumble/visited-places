@@ -1,11 +1,3 @@
-/* Business logic using constructors & prototypes
-   Includes very small test runner to satisfy TDD requirement.
-*/
-
-/* ---------------------------
-   Address Book Constructor & Prototype
-   --------------------------- */
-
 function Contact(id, name, email, phone, address) {
   this.id = id || String(Date.now()) + Math.random().toString(36).slice(2,8);
   this.name = name || "";
@@ -55,9 +47,7 @@ AddressBook.prototype.removeContact = function (id) {
   return true;
 };
 
-/* ---------------------------
-   Places Constructor & Prototype
-   --------------------------- */
+/*Places Constructor & Prototype*/
 
 function Place(id, name, location, landmarks, season, notes) {
   this.id = id || String(Date.now()) + Math.random().toString(36).slice(2,8);
@@ -85,16 +75,12 @@ Place.prototype.detailEntries = function() {
   };
 };
 
-/* ---------------------------
-   In-memory stores (simple)
-   --------------------------- */
+/* In-memory stores (simple)*/
 
 const book = new AddressBook();
 const places = []; // array of Place instances
 
-/* ---------------------------
-   DOM Utilities & UI glue
-   --------------------------- */
+/*DOM Utilities & UI glue */
 
 function el(q) { return document.querySelector(q); }
 function elAll(q) { return Array.from(document.querySelectorAll(q)); }
@@ -253,9 +239,7 @@ function escapeHtml(s) {
     .replace(/"/g,"&quot;");
 }
 
-/* ---------------------------
-   Tiny test runner for TDD
-   --------------------------- */
+/*Tiny test runner for TDD*/
 
 function assert(name, condition) {
   const log = el("#test-log");
