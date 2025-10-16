@@ -1,0 +1,149 @@
+/* Basic reset + accessibility-friendly sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#0f1720,#051123);
+  color: #e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.4;
+  padding: 1rem;
+}
+
+/* Layout */
+header, main, footer {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 1rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Nav */
+nav ul {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+}
+nav a {
+  color: #a9d6ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+nav a:hover, nav a:focus {
+  background: rgba(169,214,255,0.06);
+  outline: 2px solid rgba(169,214,255,0.12);
+}
+
+/* Sections */
+section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border-radius: 8px;
+}
+
+/* Forms and lists */
+form fieldset {
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+  width: 100%;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg,#2b6f9e,#1f4f78);
+  color: white;
+  font-weight: 600;
+}
+
+button:active { transform: translateY(1px); }
+
+/* Lists */
+ul[role="list"] {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+ul[role="list"] li {
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul[role="list"] li:hover,
+ul[role="list"] li:focus {
+  outline: 2px solid rgba(169,214,255,0.08);
+  background: rgba(169,214,255,0.02);
+}
+
+/* Details */
+address, dl {
+  margin-top: 0.5rem;
+  font-style: normal;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Test results */
+#test-log {
+  margin-top: 0.5rem;
+  background: rgba(255,255,255,0.02);
+  padding: 0.75rem;
+  border-radius: 6px;
+  list-style: decimal;
+}
+
+/* Responsive */
+@media (min-width:700px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  #test-results {
+    grid-column: 1 / -1;
+  }
+}

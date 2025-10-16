@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Address Book & Places I've Been</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Address Book &amp; Places I've Been</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#address-book">Address Book</a></li>
+        <li><a href="#places">Places I've Been</a></li>
+        <li><a href="#test-results">Tests</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="address-book" aria-labelledby="ab-title">
+      <h2 id="ab-title">Address Book</h2>
+
+      <form id="ab-form" aria-label="Add contact">
+        <fieldset>
+          <legend>Add contact</legend>
+          <label for="contact-name">Full name</label>
+          <input id="contact-name" name="name" type="text" required />
+
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" />
+
+          <label for="contact-phone">Phone</label>
+          <input id="contact-phone" name="phone" type="tel" />
+
+          <label for="contact-address">Address</label>
+          <input id="contact-address" name="address" type="text" />
+
+          <button type="submit">Add Contact</button>
+        </fieldset>
+      </form>
+
+      <section aria-label="Contacts list">
+        <h3>Contacts</h3>
+        <ul id="contacts-list" role="list"></ul>
+      </section>
+
+      <section aria-label="Contact details" id="contact-details" hidden>
+        <h3>Contact details</h3>
+        <address id="contact-detail-block"></address>
+        <menu>
+          <button id="contact-edit">Edit</button>
+          <button id="contact-delete">Delete</button>
+          <button id="contact-close">Close</button>
+        </menu>
+      </section>
+    </section>
+
+    <section id="places" aria-labelledby="places-title">
+      <h2 id="places-title">Places I've Been</h2>
+
+      <form id="place-form" aria-label="Add place">
+        <fieldset>
+          <legend>Add place</legend>
+          <label for="place-name">Place name</label>
+          <input id="place-name" name="name" type="text" required />
+
+          <label for="place-location">Location (city, country)</label>
+          <input id="place-location" name="location" type="text" />
+
+          <label for="place-landmarks">Landmarks (comma separated)</label>
+          <input id="place-landmarks" name="landmarks" type="text" />
+
+          <label for="place-season">Time of year / season</label>
+          <input id="place-season" name="season" type="text" />
+
+          <label for="place-notes">Notes</label>
+          <textarea id="place-notes" name="notes" rows="3"></textarea>
+
+          <button type="submit">Add Place</button>
+        </fieldset>
+      </form>
+
+      <section aria-label="Places list">
+        <h3>Places</h3>
+        <ul id="places-list" role="list"></ul>
+      </section>
+
+      <section id="place-details" aria-label="Place details" hidden>
+        <h3>Place details</h3>
+        <dl id="place-detail-block"></dl>
+        <menu>
+          <button id="place-close">Close</button>
+        </menu>
+      </section>
+    </section>
+
+    <section id="test-results" aria-labelledby="test-title">
+      <h2 id="test-title">Business Logic Tests</h2>
+      <p>Automated business-logic tests are executed on load. Results appear below and in the console.</p>
+      <ol id="test-log" aria-live="polite"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with constructors </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
